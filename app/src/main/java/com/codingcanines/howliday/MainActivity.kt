@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             HowlidayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Aus",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
