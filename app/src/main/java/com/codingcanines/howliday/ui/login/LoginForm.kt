@@ -17,11 +17,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.codingcanines.howliday.ui.AppViewModelProvider
 
 @Composable
 fun LoginForm(
     modifier: Modifier = Modifier,
-    viewModel: LoginViewModel = viewModel()
+    viewModel: LoginViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
     val loginFormValue by viewModel.uiState.collectAsState()
 
@@ -46,7 +47,7 @@ fun LoginForm(
             onValueChange = viewModel::updatePassword
         )
 
-        Button(onClick = {}) {
+        Button(onClick = viewModel::loginUser) {
             Text("Login")
         }
     }
