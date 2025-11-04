@@ -1,6 +1,6 @@
 package com.codingcanines.howliday.data
 
-import com.codingcanines.howliday.data.users.MockUserRepository
+import com.codingcanines.howliday.data.users.LocalUserRepository
 import com.codingcanines.howliday.data.users.UserRepository
 
 interface AppContainer {
@@ -9,6 +9,6 @@ interface AppContainer {
 
 class AppDataContainer : AppContainer {
     override val userRepository: UserRepository by lazy {
-        MockUserRepository()
+        LocalUserRepository()
     }
 }
